@@ -1,0 +1,8 @@
+Note : 
+-Please the file's name to "MyBigInteger.hs" to import MyBigInteger as a module. 
+
+Implementation Notes : 
+-Base is supported till 10 Base.
+ [For supporting larger bases, alpha-numeric support needs to be added.] 
+-Empty strings treated as "0" in  Add function.
+-Empty strings treated as "1" in  Multiply function.

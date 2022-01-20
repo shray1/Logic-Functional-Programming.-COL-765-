@@ -1,0 +1,100 @@
+Term: model of computation?
+- gives us a framework to organise our ideas about computational processes
+  -- Has three important ingredients
+     -- set of primitive operations/operators and expressions Eg: NAT, +
+
+     -- Method of combination: complex and richer expression by
+        combining primitive ones
+     
+     -- Method of abstraction: the compund expressions could be named
+        now and could be used as a unit of computation later on in the
+	program.
+
+Eg: Problem: Given a line and a point X on it, draw a perpendicular from X.
+    Model of computation:
+    1. unmarked rule and a compass
+    2. DrawPerpendicular (Line, X):
+       
+       - Put the compass on X, select some c>0 and draw arcs that
+       	 intersect the line on either side of the pt X. Let those pts
+       	 be called Y and Z.
+
+       - Draw two circles, one with Y as a center and other with Z as a center.
+       	 Radius of these circles is 2c.
+
+       - Connect the interecting pts of these 2 cicrlces with a line using the ruler
+       	 and that is provably perpendicular to the given line and it provably
+	 passes through X.
+
+     3. Name the compound primitive: I name it: DrawPerpendicular
+     	(Line, X).  Now it can use this unit in the construction of a
+     	Square from a given line and a point X on it of lenght c.
+
+Program, Programming Language
+
+Program Specification:
+
+	- what to expect from a program?
+	- achieved by means of using math to specify what we expect from a program.
+
+Formally establish a mathematical relationship between the program specification and
+its implementation. 
+ -- this is how one estblished the correctness of programs
+
+ Eg: x, y \in NAT, P(x,y) \in {x, y} /\ P(x,y) >= x /\ P(x,y) >= y
+     	-- DECLARATIVE SPECIFICATION OF THE PROGRAM!
+     What does this program do?
+
+     Implementaion:
+	if x >= y then x else y. 
+
+Brief History of Languages:
+---------------------------
+
+Machine Language: 000101110101  --- unintelligble. Von Neumann M/c architectures 1946
+
+Assembly Language -- still very low level, use mnemonics, -- readable, but still tied very close to the machine architecture.
+
+FORTRAN: (early 1960s) -- to have provided a compiler -- machine independence
+  | ______
+	 1> LISP ---> expr evaluators -- evaluate symbolic entities,.. Interpreters  
+	 2> ALGOL -- > PASCAL, C, C++, JAVA, ...    (Compilers running on virtual machines)
+
+	 1 + 2 => Logic languages (with declarative semantics --
+	 inherited from functional programmig languages) .. Prolog:
+	 Abstract machines themselves --- logically infer new facts
+	 from known (or programmed) facts
+
+Functional Programming:
+----------------------
+
+- mathematical functions, create higher order functions on them -- modularity and reuse
+Eg: R, other statistical or AI/ML langauges, ... map and filter
+
+- NO assignment statements in pure FPL. x:= x+1 -- load and store kind of an assignement is
+progressing with an i-built notion of a state.
+	    	 x = 5 -- leads of the notion of "referentially transparent"
+
+ 		Imperative program f (x){
+				     y := x + 5
+				     }
+
+         Mathematical function : f(x)= |x| = if x >=0 then x else -x
+
+- No iterative loops (in pure functional programming languages)
+  -- solely be carried out through recursion.
+
+  n! = { 1 if  0 <= n <= 1 
+       { n * (n-1)! otherwise
+
+Fact(n) = if n = 0 then 1 else n * Fact(n-1)
+
+      = { 1 if .... 
+      	{ n*n-1*n-0* .... *1 otherwise
+
+	Use the notion of induction!
+	Show the base case, assume the hypothesis, show the inductive case!
+
+
+SO long as the recursion is reduced to tail-recursion, one can get same level of
+efficiency of competitiveness! 

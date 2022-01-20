@@ -1,0 +1,49 @@
+Grammer LL(1) --------------------------------------------------------------------
+----------------------------------------------------------------------------------
+
+Start -> Expr "$"
+
+Expr : "let" Var "=" Expr "in" Expr "end"
+	 | "if"  Expr "then" Expr "else" Expr 
+	 |  BZExpr
+
+BZExpr : CExpr "IMPLIES" BZExpr 
+	   |  CExpr 
+
+CExpr : DExpr AOXEExpr 
+
+AOXEExpr : "AND" DExpr AOXEExpr
+		 | "OR" DExpr AOXEExpr
+		 | "XOR" DExpr AOXEExpr
+		 | "EQUALS" DExpr AOXEExpr
+		 | empty 
+
+DExpr : FExpr LGExpr
+
+LGExpr : ">" FExpr
+       | "<" FExpr 
+       | empty
+
+FExpr : HExpr PMExpr 
+
+PMExpr : "+" HExpr PMExpr
+       | "-" HExpr PMExpr
+       | empty
+
+HExpr : IExpr MulExpr 
+
+MulExpr : "*" IExpr MulExpr
+        | empty
+
+IExpr : "(" Expr ")"
+	  | "NOT" IExpr 
+	  | "-" IExpr
+	  | Variable 
+      | Number 
+	  | Boolean
+
+Variable : "string"
+Number : "number"
+Boolean : TRUE | FALSE
+
+----------------------------------------------------------------------------------

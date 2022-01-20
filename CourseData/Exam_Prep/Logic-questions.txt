@@ -1,0 +1,34 @@
+
+1. What is wrong with the following argument: All supermen can
+fly. Therefore, there is a superman.
+
+2. Can the following formulas be unabiguously parsed?
+   - p \/ q /\ r 
+   - p \/ q \/r
+   - NOT p \/ (p XOR q) <=> p /\ q
+
+3. Encode the following puzzle in proposotional logic: People are
+   either good or bad. The good people always tell the truth and the
+   bad people always tell a lie. Now let us consider the following
+   question.  There are two people A and B. A said some thing, but we
+   could not hear it. B said, “A is saying that A is bad”. What are A
+   and B?
+
+4. Prove the theorem: In propositional logic, a proper prefix of a
+   formula is not a formula.
+
+5. Prove the theorem: Each formula f \in P (language of Propositional logic) has a
+   unique parsing tree.
+
+6. Given a model and a parse tree of a formula f, give the
+   satisfiability checking procedure.
+
+7. Prove the theorem: The satisfiability problem of any formula f in P
+   (language of Propositional logic) is decidable.
+
+8. Give the procedure to decide the validity of a formula in propositional logic.
+
+9. Show that f[BOT / p] /\ f[TOP / p ] |= F (where f[a/b] stands for
+   substituting b for a in f).
+	       		
+

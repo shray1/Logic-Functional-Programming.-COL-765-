@@ -1,0 +1,32 @@
+1. Use the proof rules of Prop. logic to prove the following:
+   - {} |- (p IMPLIES q) OR P
+   - if Gamma |- F AND (G OR H) then we can derive Gamma |- (F AND G) OR (F AND H)
+
+2. Consider S = ({c/0, f/1}, {H/1, M/2}). Suppose the following:
+   D_m = {RED, BLUE, GREEN}
+   c_m = RED
+   f_m = {BLUE--> GREEN, GREEN-->RED, RED-->RED}
+   H_m = {BLUE, GREEN}
+   M_m = {(BLUE, BLUE), (GREEN, RED)}
+   Now, which of the following is valid:
+   (a) m, l = {x |-> RED} |= M(f(x),x)
+   (b) m, l = {x |-> RED} |= H(x)
+   (c) m, l = {} |= EXISTS x.H(x)
+   (d) m, l = {} |= FORALL x.H(x)
+   (e) m, l = {} |= EXISTS x.H(f(x))
+
+3. Prove using FOL proof rules: {} |- FORALL x,y. (x NEQ y OR f(x) = f(y)).
+   Note the equality-specifif proof rules are:
+   Reflex:          -------------
+   		    Gamma |- t = t
+
+   EqSub:           Gamma |- f(t), Gamma |- t = t'
+   		    -----------------------------
+		           Gamma |- f (t')
+
+4. Convert the following formula into FOL CNF:
+    EXISTS z.(EXISTS x.Q(x, z) OR EXISTS x.P(x)) -->  NOT(NOT EXISTS x.P(x) AND FORALL x. EXISTS z.Q(z, x) )
+   
+5. Consider again FORALL x1, x2, x3, x4. f (x1, x3, x2) NEQ f (g(x2), j(x4), h(x3, a))
+Given the above, are f (x1, x3, x2) and f (g(x2), j(x4), h(x3, a)) unifiable?
+

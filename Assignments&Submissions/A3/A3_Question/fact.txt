@@ -1,0 +1,4 @@
+let hello := fn (n::int) => (fun fact (n::int)::int => if n = 0 then 1 else (fact (n-1))*n fi  n)  in (hello 10) end;
+
+
+
